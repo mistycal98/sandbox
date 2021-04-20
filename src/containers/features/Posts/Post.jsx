@@ -3,14 +3,15 @@ import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { sagaActions } from "../../../app/sagaActions";
-import { fetchPosts, fetchPostsSaga } from "./postSlice";
+import { fetchPosts } from "./postSlice";
 const Post = () => {
 	// Redux State and Dispatch
 	const state = useSelector(({ posts }) => posts);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch({ type: sagaActions.FETCH_POSTS });
+		// dispatch({ type: sagaActions.FETCH_POSTS });
+		dispatch(fetchPosts());
 		return () => {};
 	}, []);
 	return (

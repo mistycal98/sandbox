@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { call, put } from "redux-saga/effects";
 import { callAPI } from "../../../services/api";
+import axios from "axios";
 
 const initialState = {
 	loading: true,
@@ -27,17 +28,17 @@ const postSlice = createSlice({
 export const { loadingAction, postAction, errorAction } = postSlice.actions;
 
 //? Redux Thunk Example
-// export const fetchPosts = () => async (dispatch) => {
-// 	dispatch(loadingAction(true));
-// 	try {
-// 		const { data } = await axios.get(`${process.env.REACT_APP_URL}/posts`);
-// 		// console.log(data);
-// 		dispatch(postAction(data));
-// 	} catch (error) {
-// 		// console.log(error);
-// 		dispatch(errorAction(error.message));
-// 	}
-// };
+export const fetchPosts = () => async (dispatch) => {
+	dispatch(loadingAction(true));
+	try {
+		const { data } = await axios.get(`${process.env.REACT_APP_URL}/posts`);
+		// console.log(data);
+		dispatch(postAction(data));
+	} catch (error) {
+		// console.log(error);
+		dispatch(errorAction(error.message));
+	}
+};
 
 //? Redux Saga Example
 export function* fetchPostsSaga() {
