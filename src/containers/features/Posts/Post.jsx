@@ -2,7 +2,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { sagaActions } from "../../../app/sagaActions";
+// import { sagaActions } from "../../../app/sagaActions";
 import { fetchPosts } from "./postSlice";
 const Post = () => {
 	// Redux State and Dispatch

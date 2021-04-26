@@ -6,6 +6,7 @@ import Users from "./pages/Users";
 import Posts from "./containers/features/Posts";
 import Counter from "./containers/features/Counter";
 import Mobile from "./pages/Mobile";
+import SuspenseComponent from "./pages/Suspense";
 
 const Routes = () => {
 	return (
@@ -17,6 +18,7 @@ const Routes = () => {
 			<Route exact path="/redux/posts" component={Posts} />
 			<Route exact path="/redux/counter" component={Counter} />
 			<Route exact path="/dfe-mobile" component={Mobile} />
+			<Route exact path="/react-suspense" component={SuspenseComponent} />
 			<Route exact render={() => <p>404 Not Found</p>} />
 		</Switch>
 	);
